@@ -77,7 +77,7 @@ class App extends Component {
         })
     }
     winModal = (text) => {
-        this.setState({text:text});
+        this.setState({text:text, lose: true});
     }
     render () {
         const chars = this.state.chars;
