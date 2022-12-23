@@ -79,6 +79,9 @@ class App extends Component {
     winModal = (text) => {
         this.setState({text:text, lose: true});
     }
+    drawModal = (text) => {
+        this.setState({text:text, lose: true});
+    }
     render () {
         const chars = this.state.chars;
         if (chars[0].char == "x" && chars[1].char == "x" && chars[2].char == "x") {
@@ -197,6 +200,11 @@ class App extends Component {
             setTimeout(() => {
                 this.winModal("Нолики выйграли");
             }, 0)
+            setTimeout(() => {
+                document.location.href = "./";
+            }, 1000);
+        } else if (chars[0].char != "" && chars[1].char != "" && chars[2].char != "" && chars[3].char != "" && chars[4].char != "" && chars[5].char != "" && chars[6].char != "" && chars[7].char != "" && chars[8].char != "" && this.state.lose != true) {
+            this.drawModal("Ничья");
             setTimeout(() => {
                 document.location.href = "./";
             }, 1000);
